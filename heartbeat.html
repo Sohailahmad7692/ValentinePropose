@@ -1,0 +1,197 @@
+<html>
+   <head>
+      <title>
+         My Guardians
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- <link rel="stylesheet" href="C:\Users\Sohail Ahmad\Desktop\style.css"> -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+   </head>
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Merriweather Sans', sans-serif;
+         ;
+      }
+      h1{
+         /* position: relative; */
+         /* left: 65%;
+         top: 10%; */
+         font-size: 3rem;
+         font-family: 'Pacifico', cursive;
+
+      }
+      body{
+         /* display: grid;
+         place-items: center; */
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         /* flex-direction: row; */
+         background-color: rgba(241, 58, 58, 0.822);
+      }
+      .centerDiv{
+         background-color: rgb(233, 169, 124);
+         /* clip-path: polygon(0 26%, 50% 0, 98% 27%, 100% 86%, 0 85%, 0 70%); */
+         width: 50vw;
+         height: 50vh;
+         border: 2px solid #000000;
+         position: relative;
+         display: grid;
+         place-items: center;
+         border-radius: 20px;
+         
+      }
+      .heart{
+         position: absolute;
+         border-bottom: 1px solid red;
+         border-right: 1px solid red;
+         background-color: red;
+         width: 10rem;
+         height: 10rem;
+         transform: rotate(45deg);
+         animation: heart 1s linear infinite;
+         box-shadow: 5px 5px 10px 1px grey;
+         /* display: none; */
+      }
+      @keyframes heart {
+         0%{
+            transform: rotate(45deg) scale(1);
+         }
+         20%{
+            transform: rotate(45deg) scale(1.3);
+         }
+         40%{
+            transform: rotate(45deg) scale(1.2);
+         }
+         60%{
+            transform: rotate(45deg) scale(1.3);
+         }
+         80%{
+            transform: rotate(45deg) scale(1.2);
+         }
+         100%{
+            transform: rotate(45deg) scale(1);
+         }
+      }
+      .heart::before{
+         content: '';
+         width: 100%;
+         height: 100%;
+         border: 2px solid red;
+         background-color: red;
+         border-radius: 50%;
+         position: absolute;
+         transform: translate(-50%,-2%);
+      }
+      .heart::after{
+         content: '';
+         width: 100%;
+         height: 100%;
+         border: 2px solid red;
+         background-color: red;
+         /* background-color: black; */
+         border-radius: 50%;
+         position: absolute;
+         transform: translate(-2%,-50%);
+      }
+         @media only screen and (max-width: 960px){
+            html{
+               font-size: 50%;
+            }
+         }
+         @media only screen and (max-width: 1500px){
+            html{
+               font-size: 55%;
+            }
+         }
+         .displayProperty{
+            display: none;
+         }
+        .buttonflex{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-around;
+        }
+        .buttonflex button{
+           width: 7rem;
+           height: 3rem;
+           font-size: 1rem;
+        }
+   </style>
+   <body>
+      <h1 id="proposal">Will you be my Valentine</h1>
+      <h1 class="displayProperty" id="valentineMub">Happy Valentine Meri Jaaan ...Love You &hearts;</h1>
+      <h1 class="displayProperty" id="thukrake">Thukra ke Mera Pyar mera inteqam dekhegi &#128293;&#128293;</h1>
+      <div class="buttonflex">
+      <button id="yesClick"> If yes,Click Me</button>
+      <button id="noClick">If no, Click Me</button>
+      </div>
+      <div class="centerDiv"  >
+         <div class="heartDisplay">
+         <div class="displayProperty" id="diltoota" >
+               <h1>Mohabbat thi is liye jane diya ...Jidh hoti toh bahon mein hoti</h1>
+            </div>
+         </div>
+      </div>
+      <script>
+         let x=0;
+         let y=0;
+         let yesClick=document.querySelector("#yesClick")
+         let noClick=document.querySelector("#noClick")
+         let heartDisplay=document.querySelector(".heartDisplay")
+         let diltoota=document.querySelector("#diltoota")
+         let valentineMub=document.querySelector("#valentineMub")
+         let thukrake=document.querySelector("#thukrake")
+         let proposal=document.querySelector("#proposal")
+        function yesClickFun(){
+            heartDisplay.classList.toggle("heart")
+            diltoota.classList.add("displayProperty")
+            valentineMub.classList.toggle("displayProperty")
+            thukrake.classList.add("displayProperty")
+            proposal.classList.add("displayProperty")
+            if(x==0 && y==0){
+               proposal.classList.add("displayProperty")
+               x=1
+            }
+            else if(x==1 && y==0){
+               proposal.classList.remove("displayProperty")
+               x=0
+            }
+            else if(x==0 && y==1){
+               x=1
+               y=0
+            }
+            
+            // yesClick.classList.toggle("displayProperty")
+            // noClick.classList.toggle("displayProperty")
+         }
+         function noClickFun(){
+            diltoota.classList.toggle("displayProperty")
+            heartDisplay.classList.remove("heart")
+            thukrake.classList.toggle("displayProperty")
+            valentineMub.classList.add("displayProperty")
+            proposal.classList.add("displayProperty")
+            if(x==0 && y==0){
+               proposal.classList.add("displayProperty")
+               y=1;
+            }
+            else if(x==0 && y==1){
+               proposal.classList.remove("displayProperty")
+               y=0
+            }
+            else if(x==1 && y==0){
+               x=0
+               y=1
+            }
+         }
+         yesClick.addEventListener("click",yesClickFun)
+         noClick.addEventListener("click",noClickFun)
+      </script>
+   </body>
+   
+</html>
