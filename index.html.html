@@ -24,9 +24,11 @@
          font-family: 'Pacifico', cursive;
 
       }
-      body{
+      .mainDiv{
          /* display: grid;
          place-items: center; */
+         width: 100vw;
+         height: 100vh;
          display: flex;
          justify-content: center;
          align-items: center;
@@ -120,10 +122,11 @@
         .buttonflex button{
            width: 7rem;
            height: 3rem;
-           font-size: 1rem;
+           font-size: 1grem;
         }
    </style>
    <body>
+      <div class="mainDiv">
       <h1 id="proposal">Will you be my Valentine</h1>
       <h1 class="displayProperty" id="valentineMub">Happy Valentine Meri Jaaan ...Love You &hearts;</h1>
       <h1 class="displayProperty" id="thukrake">Thukra ke Mera Pyar mera inteqam dekhegi &#128293;&#128293;</h1>
@@ -138,6 +141,7 @@
             </div>
          </div>
       </div>
+   </div>
       <script>
          let x=0;
          let y=0;
